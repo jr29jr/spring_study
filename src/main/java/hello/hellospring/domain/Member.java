@@ -1,7 +1,16 @@
 package hello.hellospring.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Member {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    //db이름을 name으로 매핑시킨다.
+    @Column(name ="name")
     private String name;
 
     public Long getId() {
